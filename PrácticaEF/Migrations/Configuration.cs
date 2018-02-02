@@ -18,6 +18,10 @@ namespace PrácticaEF.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            context.Generos.AddOrUpdate(g => g.Id,
+                new Genero() { Id = 1, Nombre = "Artes Marciales" },
+                new Genero() { Id = 2, Nombre = "Acción" });
         }
     }
 }

@@ -20,15 +20,15 @@ namespace PrácticaEF
 
             //Configuración de relaciones
             //Tabla intermedia Video-Generos
-            modelBuilder.Entity<Video>()
-                .HasMany<Genero>(v => v.Generos)
-                .WithMany(g => g.Videos)
-                .Map(vg =>
-                {
-                    vg.MapLeftKey("RefVideoId");
-                    vg.MapRightKey("RefGeneroId");
-                    vg.ToTable("VideoGeneros");
-                });
+            //modelBuilder.Entity<Video>()
+            //    .HasMany<Genero>(v => v.Generos)
+            //    .WithMany(g => g.Videos)
+            //    .Map(vg =>
+            //    {
+            //        vg.MapLeftKey("RefVideoId");s
+            //        vg.MapRightKey("RefGeneroId");
+            //        vg.ToTable("VideoGeneros");
+            //    });
         }
     }
 }

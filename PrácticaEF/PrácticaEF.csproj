@@ -54,6 +54,14 @@
     <Compile Include="Migrations\201802021730051_ModeloInicial.Designer.cs">
       <DependentUpon>201802021730051_ModeloInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802021807100_ConfiguradoMétodoSeed.cs" />
+    <Compile Include="Migrations\201802021807100_ConfiguradoMétodoSeed.Designer.cs">
+      <DependentUpon>201802021807100_ConfiguradoMétodoSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802021901562_ModificaRelacioTablasnVideoGeneroMuchosAUno.cs" />
+    <Compile Include="Migrations\201802021901562_ModificaRelacioTablasnVideoGeneroMuchosAUno.Designer.cs">
+      <DependentUpon>201802021901562_ModificaRelacioTablasnVideoGeneroMuchosAUno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +76,15 @@
     <EmbeddedResource Include="Migrations\201802021730051_ModeloInicial.resx">
       <DependentUpon>201802021730051_ModeloInicial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802021807100_ConfiguradoMétodoSeed.resx">
+      <DependentUpon>201802021807100_ConfiguradoMétodoSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802021901562_ModificaRelacioTablasnVideoGeneroMuchosAUno.resx">
+      <DependentUpon>201802021901562_ModificaRelacioTablasnVideoGeneroMuchosAUno.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
