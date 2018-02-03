@@ -53,6 +53,8 @@
     <Compile Include="FluentAPI-Configurations\ConfiguraciónGénero.cs" />
     <Compile Include="FluentAPI-Configurations\ConfiguraciónVideo.cs" />
     <Compile Include="Genero.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IVideoRepository.cs" />
     <Compile Include="Migrations\201802021730051_ModeloInicial.cs" />
     <Compile Include="Migrations\201802021730051_ModeloInicial.Designer.cs">
       <DependentUpon>201802021730051_ModeloInicial.cs</DependentUpon>
@@ -77,12 +79,18 @@
     <Compile Include="Migrations\201802022039253_AgregadaTablaTagsYRelacionNMConTablaVideo.Designer.cs">
       <DependentUpon>201802022039253_AgregadaTablaTagsYRelacionNMConTablaVideo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802022346501_UpdatedSeedDataAndFillingTheGeneroTable.cs" />
+    <Compile Include="Migrations\201802022346501_UpdatedSeedDataAndFillingTheGeneroTable.Designer.cs">
+      <DependentUpon>201802022346501_UpdatedSeedDataAndFillingTheGeneroTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="Tag.cs" />
     <Compile Include="Video.cs" />
     <Compile Include="VideoContext.cs" />
+    <Compile Include="VideoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -107,9 +115,10 @@
     <EmbeddedResource Include="Migrations\201802022039253_AgregadaTablaTagsYRelacionNMConTablaVideo.resx">
       <DependentUpon>201802022039253_AgregadaTablaTagsYRelacionNMConTablaVideo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802022346501_UpdatedSeedDataAndFillingTheGeneroTable.resx">
+      <DependentUpon>201802022346501_UpdatedSeedDataAndFillingTheGeneroTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
