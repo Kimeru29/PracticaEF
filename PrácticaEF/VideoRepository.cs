@@ -16,7 +16,7 @@ namespace PrácticaEF
         {
         }
 
-        public IEnumerable<object> ObtenerPeliculasPorClasificacion()
+        public IEnumerable<dynamic> ObtenerPeliculasPorClasificacion()
         {
             return VideoContext.Videos.GroupBy(v => v.Clasificacion)
                                         .Select(v => new
@@ -26,7 +26,7 @@ namespace PrácticaEF
                                         });
         }
 
-        public IEnumerable<object> ObtenerVideosConGenero()
+        public IEnumerable<dynamic> ObtenerVideosConGenero()
         {
             return VideoContext.Videos.Select(v => new
             {
@@ -38,14 +38,11 @@ namespace PrácticaEF
         public IEnumerable<Video> ObtenerVideosOroPorFecha()
         {
             return VideoContext.Videos.Include(v => v.Genero)
-                                        .Where(v => v.Clasificacion == Clasificacion.Oro && v.Genero.Nombre == "Acción")
+                                        .Where(v => v.Clasificacion == Clasificacion.Oro)
                                         .OrderByDescending(v => v.FechaDeEstreno);
         }
 
-        public IEnumerable<Video> ObtenerVideosPorNombre()
-        {
-            return VideoContext.Videos.OrderBy(v => v.Nombre);
-        }
+        public IEnumerable<Video> ObtenerVideosPorNombre() => VideoContext.Videos.OrderBy(v => v.Nombre);
 
         private VideoContext VideoContext
         {

@@ -11,7 +11,7 @@ namespace PrácticaEF.Interfaces
         IEnumerable<Video> ObtenerVideosPorNombre();
         IEnumerable<Video> ObtenerVideosOroPorFecha();
 
-        IEnumerable<object> ObtenerVideosConGenero();
-        IEnumerable<object> ObtenerPeliculasPorClasificacion();
+        IEnumerable<dynamic> ObtenerVideosConGenero();
+        IEnumerable<dynamic> ObtenerPeliculasPorClasificacion();
     }
 }
