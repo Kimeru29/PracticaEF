@@ -17,6 +17,6 @@ namespace PrácticaEF
 
         public void Dispose() => _context.Dispose();
 
-        public IVideoRepository VideoRepository { get; private set; }
+        public IVideoRepository VideoRepository { get; }
     }
 }

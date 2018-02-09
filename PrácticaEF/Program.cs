@@ -3,30 +3,30 @@ using System;
 
 namespace PrácticaEF
 {
-
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             using (var unitOfWork = new UnitOfWork(new VideoContext()))
             {
-                Console.WriteLine("\nVideos categoría oro ordenados por fecha");
+                DemostracionLinq(unitOfWork);
+            }
+            Console.ReadKey();
+        }
+
+        static void DemostracionLinq(IUnitOfWork unitOfWork)
+        {
+            Console.WriteLine("Videos categoría oro ordenados por fecha");
 
                 foreach (var peli in unitOfWork.VideoRepository.ObtenerVideosOroPorFecha())
                 {
                     Console.WriteLine($"{peli.Nombre}  |  {peli.FechaDeEstreno}");
                 }
-            }
+            
 
-
-            Console.ReadKey();
-        }
-
-        static void DemostracionLinq(IVideoRepository repo)
-        {
             Console.WriteLine("Videos agrupados por su clasificación:");
 
-            foreach (var peli in repo.ObtenerPeliculasPorClasificacion())
+            foreach (var peli in unitOfWork.VideoRepository.ObtenerPeliculasPorClasificacion())
             {
                 Console.WriteLine($"Clasificación: {peli.clasificación}");
                 foreach (var pelis in peli.videos)
@@ -37,14 +37,14 @@ namespace PrácticaEF
 
             Console.WriteLine("\nLista de videos con su género");
 
-            foreach (var peli in repo.ObtenerVideosConGenero())
+            foreach (var peli in unitOfWork.VideoRepository.ObtenerVideosConGenero())
             {
                 Console.WriteLine($"{peli.nombre} | {peli.genero}");
             }
 
             Console.WriteLine("\nVideos categoría oro ordenados por fecha");
 
-            foreach (var peli in repo.ObtenerVideosOroPorFecha())
+            foreach (var peli in unitOfWork.VideoRepository.ObtenerVideosOroPorFecha())
             {
                 Console.WriteLine($"{peli.Nombre}  |  {peli.FechaDeEstreno}");
             }

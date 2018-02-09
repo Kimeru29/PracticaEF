@@ -49,13 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clasificacion.cs" />
-    <Compile Include="FluentAPI-Configurations\ConfiguraciónGénero.cs" />
-    <Compile Include="FluentAPI-Configurations\ConfiguraciónVideo.cs" />
-    <Compile Include="Genero.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IVideoRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Core\Domain\Clasificacion.cs" />
+    <Compile Include="Data\Entity Configurations\ConfiguraciónGénero.cs" />
+    <Compile Include="Data\Entity Configurations\ConfiguraciónVideo.cs" />
+    <Compile Include="Core\Domain\Genero.cs" />
+    <Compile Include="Core\Repository\IRepository.cs" />
+    <Compile Include="Core\Repository\IVideoRepository.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Migrations\201802021730051_ModeloInicial.cs" />
     <Compile Include="Migrations\201802021730051_ModeloInicial.Designer.cs">
       <DependentUpon>201802021730051_ModeloInicial.cs</DependentUpon>
@@ -87,12 +87,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
-    <Compile Include="Tag.cs" />
-    <Compile Include="UnitOfWork.cs" />
-    <Compile Include="Video.cs" />
-    <Compile Include="VideoContext.cs" />
-    <Compile Include="VideoRepository.cs" />
+    <Compile Include="Data\Repository.cs" />
+    <Compile Include="Core\Domain\Tag.cs" />
+    <Compile Include="Data\UnitOfWork.cs" />
+    <Compile Include="Core\Domain\Video.cs" />
+    <Compile Include="Data\VideoContext.cs" />
+    <Compile Include="Data\VideoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
