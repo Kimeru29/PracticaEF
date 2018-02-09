@@ -3,13 +3,21 @@ using System;
 
 namespace PrácticaEF
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            var repo = new VideoRepository(new VideoContext());
-            DemostracionLinq(repo);
-            
+            using (var unitOfWork = new UnitOfWork(new VideoContext()))
+            {
+                Console.WriteLine("\nVideos categoría oro ordenados por fecha");
+
+                foreach (var peli in unitOfWork.VideoRepository.ObtenerVideosOroPorFecha())
+                {
+                    Console.WriteLine($"{peli.Nombre}  |  {peli.FechaDeEstreno}");
+                }
+            }
+
 
             Console.ReadKey();
         }
@@ -17,8 +25,8 @@ namespace PrácticaEF
         static void DemostracionLinq(IVideoRepository repo)
         {
             Console.WriteLine("Videos agrupados por su clasificación:");
-            var videosporclasificacion = repo.ObtenerPeliculasPorClasificacion();
-            foreach (var peli in videosporclasificacion)
+
+            foreach (var peli in repo.ObtenerPeliculasPorClasificacion())
             {
                 Console.WriteLine($"Clasificación: {peli.clasificación}");
                 foreach (var pelis in peli.videos)
@@ -28,15 +36,15 @@ namespace PrácticaEF
             }
 
             Console.WriteLine("\nLista de videos con su género");
-            var videoscongenero = repo.ObtenerVideosConGenero();
-            foreach (var peli in videoscongenero)
+
+            foreach (var peli in repo.ObtenerVideosConGenero())
             {
                 Console.WriteLine($"{peli.nombre} | {peli.genero}");
             }
 
             Console.WriteLine("\nVideos categoría oro ordenados por fecha");
-            var videosOro = repo.ObtenerVideosOroPorFecha();
-            foreach (var peli in videosOro)
+
+            foreach (var peli in repo.ObtenerVideosOroPorFecha())
             {
                 Console.WriteLine($"{peli.Nombre}  |  {peli.FechaDeEstreno}");
             }

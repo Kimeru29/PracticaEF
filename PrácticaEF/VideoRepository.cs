@@ -11,7 +11,7 @@ namespace PrácticaEF
 {
     class VideoRepository : Repository<Video>, IVideoRepository
     {
-        public VideoRepository(VideoContext context)
+        public VideoRepository(DbContext context)
             : base(context)
         {
         }
